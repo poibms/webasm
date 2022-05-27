@@ -21,6 +21,7 @@ document.querySelector('#btn-paste-from-stb').addEventListener('click', function
         inputs.d.value = '69E273C25F23790C9E423207ED1F283418F2749C32F033456739734BB8B5661F';
 });
 
+//q= g *d 
 function mult(m, a, b, qx, qy, scalar) {
     return Module.ccall(
         'mult',
