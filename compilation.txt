@@ -1,0 +1,8 @@
+--для создания папки проекта
+mkdir compiled_project
+
+--для компиляции проекта в webasm, экспортируется только функция mult, 'ccal','cwrap' нужны для вызова функции
+emcc EC/Project1/Source.cpp EC/Project1/NumeralConverter.cpp EC/BigInteger.cpp EC/EllipticCurve.cpp EC/point.cpp -O3 -s WASM=1 -s EXPORTED_FUNCTIONS="['_mult']" -s EXPORTED_RUNTIME_METHODS="['ccall','cwrap']" -o compiled_project/EC.html --shell-file assets/shell_minimal.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -s ASSERTIONS=1
+
+--для перенесения файла с кастомными скриптами в папку проекта 
+cp assets/custom_script.js compiled_project
